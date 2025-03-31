@@ -26,10 +26,10 @@ import { BedrockPassportProvider } from "@bedrock_org/passport";
 const Provider: React.FC<ProviderProps> = ({ children }) => {
   return (
     <BedrockPassportProvider
-      baseUrl="https://xxx"
-      authCallbackUrl="http://xxx"
-      tenantId="demo"
-      walletConnectId="projectId"
+      baseUrl="https://api.bedrockpassport.com" // Base API URL – no need to change this. Leave as is.
+      authCallbackUrl="http://<yoururl>.com/auth/callback"  // This page must exist and handle the login callback. Replace <yoururl> with your actual domain.
+      tenantId="orange-vibe"  // Your assigned tenant ID – do not change this unless instructed
+      walletConnectId="591d21ef88b24c6837599a5c2a0ce03d" // Optional: WalletConnect Project ID. The default is fine, but you can replace it with your own
     >
       {children}
     </BedrockPassportProvider>
