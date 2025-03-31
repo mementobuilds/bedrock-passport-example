@@ -11,6 +11,14 @@
 
 ## How to Install
 
+Create a .npmrc file in the root of your project and add the following line
+
+```bash
+//registry.npmjs.org/:_authToken=<your_token>
+```
+
+This token will be provided by the team
+
 ```bash
 npm i @bedrock_org/passport
 ```
