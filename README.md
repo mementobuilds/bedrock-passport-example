@@ -1,4 +1,4 @@
-# Bedrock passport integration example
+# Orange ID by Bedrock Integration Example
 
 <!--toc:start-->
 
@@ -93,10 +93,10 @@ import "@bedrock_org/passport/dist/style.css";
   headerClass="justify-center"
   title="Sign in to"
   titleClass="text-xl font-bold"
-  logo="https://irp.cdn-website.com/4d865567/dms3rep/multi/bedrockxr-logo-colored-white-type-v1a-20241111.svg"
-  logoAlt="Bedrock Passport"
+  logo="https://irp.cdn-website.com/e81c109a/dms3rep/multi/orange-logo-v1a-20240228.svg"
+  logoAlt="Orange Web3"
   logoClass="ml-2 md:h-8 h-6"
-  showConnectWallet={true}
+  showConnectWallet={false}
   walletButtonText="Connect Wallet"
   separatorText="OR"
   separatorTextClass="bg-blue-900 text-gray-500"
