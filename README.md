@@ -27,7 +27,7 @@ const Provider: React.FC<ProviderProps> = ({ children }) => {
   return (
     <BedrockPassportProvider
       baseUrl="https://api.bedrockpassport.com" // Base API URL – no need to change this. Leave as is.
-      authCallbackUrl="http://<yoururl>.com/auth/callback"  // This page must exist and handle the login callback. Replace <yoururl> with your actual domain.
+      authCallbackUrl="http://<your_url>/auth/callback"  // This page must exist and handle the login callback. Replace <yoururl> with your actual domain.
       tenantId="orange-vibe"  // Your assigned tenant ID - you can request one at https://vibecodinglist.com/orange-id-integration
       walletConnectId="591d21ef88b24c6837599a5c2a0ce03d" // Optional: WalletConnect Project ID. The default is fine, but you can replace it with your own.
     >
