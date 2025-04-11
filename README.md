@@ -93,7 +93,7 @@ import "@bedrock_org/passport/dist/style.css";
   headerClass="justify-center"
   title="Sign in to"
   titleClass="text-xl font-bold"
-  logo="https://irp.cdn-website.com/e81c109a/dms3rep/multi/orange-logo-v1a-20240228.svg"
+  logo="https://irp.cdn-website.com/e81c109a/dms3rep/multi/orange-web3-logo-v2a-20241018.svg"
   logoAlt="Orange Web3"
   logoClass="ml-2 md:h-8 h-6"
   showConnectWallet={false}
@@ -101,6 +101,7 @@ import "@bedrock_org/passport/dist/style.css";
   separatorText="OR"
   separatorTextClass="bg-blue-900 text-gray-500"
   separatorClass="bg-blue-900"
+  linkRowClass: "justify-center"
 />
 
 ```
