@@ -28,7 +28,7 @@ const Provider: React.FC<ProviderProps> = ({ children }) => {
     <BedrockPassportProvider
       baseUrl="https://api.bedrockpassport.com" // Base API URL – no need to change this. Leave as is.
       authCallbackUrl="http://<your_url>/auth/callback"  // This page must exist and handle the login callback. Replace <yoururl> with your actual domain.
-      tenantId="orange-vibe"  // Your assigned tenant ID - you can request one at https://vibecodinglist.com/orange-id-integration
+      tenantId="orange-abc123"  // Your assigned tenant ID - you can request one at https://vibecodinglist.com/orange-id-integration
       walletConnectId="591d21ef88b24c6837599a5c2a0ce03d" // Optional: WalletConnect Project ID. The default is fine, but you can replace it with your own.
     >
       {children}
@@ -89,7 +89,7 @@ import "@bedrock_org/passport/dist/style.css";
 ...
 <LoginPanel
   panelClass="container p-2 md:p-8 rounded-2xl max-w-[480px]"
-  buttonClass="hover:border-blue-500"
+  buttonClass="hover:border-orange-500"
   headerClass="justify-center"
   title="Sign in to"
   titleClass="text-xl font-bold"
@@ -99,8 +99,8 @@ import "@bedrock_org/passport/dist/style.css";
   showConnectWallet={false}
   walletButtonText="Connect Wallet"
   separatorText="OR"
-  separatorTextClass="bg-blue-900 text-gray-500"
-  separatorClass="bg-blue-900"
+  separatorTextClass="bg-orange-900 text-gray-500"
+  separatorClass="bg-orange-900"
   linkRowClass="justify-center"
 />
 
