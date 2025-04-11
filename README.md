@@ -101,7 +101,7 @@ import "@bedrock_org/passport/dist/style.css";
   separatorText="OR"
   separatorTextClass="bg-blue-900 text-gray-500"
   separatorClass="bg-blue-900"
-  linkRowClass: "justify-center"
+  linkRowClass="justify-center"
 />
 
 ```
