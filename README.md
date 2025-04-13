@@ -1,4 +1,4 @@
-# Orange ID by Bedrock Integration Example
+# Orange ID by Bedrock - React (NPM) Integration Guide
 
 <!--toc:start-->
 
@@ -27,9 +27,8 @@ const Provider: React.FC<ProviderProps> = ({ children }) => {
   return (
     <BedrockPassportProvider
       baseUrl="https://api.bedrockpassport.com" // Base API URL – no need to change this. Leave as is.
-      authCallbackUrl="http://<your_url>/auth/callback"  // This page must exist and handle the login callback. Replace <yoururl> with your actual domain.
+      authCallbackUrl="https://yourdomain.com/auth/callback" // Replace with your actual callback URL
       tenantId="orange-abc123"  // Your assigned tenant ID - you can request one at https://vibecodinglist.com/orange-id-integration
-      walletConnectId="591d21ef88b24c6837599a5c2a0ce03d" // Optional: WalletConnect Project ID. The default is fine, but you can replace it with your own.
     >
       {children}
     </BedrockPassportProvider>
@@ -138,3 +137,101 @@ The library is still in development, more features will be added in the future.
 ```jsx
 const { isLoggedIn } = useBedrockPassport();
 ```
+
+
+## 📦 User Object Returned After Login
+
+When a user logs in successfully using Bedrock Passport, you can access a structured user object like the following:
+
+```json
+{
+  "id": "clf8138x000045o01a4p2ajpi",
+  "email": "testuser@example.com",
+  "name": "Test User",
+  "displayName": "testname",
+  "userName": "",
+  "address": "",
+  "country": "",
+  "company": "",
+  "phoneNumber": "",
+  "bio": "Just a sample user bio.",
+  "role": "user",
+  "playfabId": "9854EA000727F7A1",
+  "sessionTicket": "",
+  "picture": "https://cdn.example.com/images/sample_user.png",
+  "banner": "https://cdn.example.com/images/sample_user_banner.png",
+  "ethAddress": "0x1234567890abcdef1234567890abcdef12345678",
+  "waxAddress": "",
+  "photoUrl": "https://cdn.example.com/images/sample_user.png",
+  "createdAt": "2025-04-07T06:21:36.674Z",
+  "provider": "google"
+}
+```
+
+### Explanation of Fields
+
+| Key             | Description                                                                                       |
+|------------------|---------------------------------------------------------------------------------------------------|
+| `id`             | Unique Orange ID – the main identifier for the user.                                             |
+| `email`          | User's email address.                                                                            |
+| `name`           | User’s full name (from the provider).                                                            |
+| `displayName`    | Custom display name editable at [vibecodinglist.com/profile](https://vibecodinglist.com/profile) |
+| `userName`       | Optional username (currently unused).                                                            |
+| `address`        | General address field (optional).                                                                |
+| `country`        | Country of the user (optional).                                                                  |
+| `company`        | Company name (optional).                                                                         |
+| `phoneNumber`    | User’s phone number (optional).                                                                  |
+| `bio`            | Short biography set by the user.                                                                 |
+| `role`           | User role (e.g., `user`, `admin`, etc.).                                                         |
+| `playfabId`      | Internal ID for PlayFab integration – can be ignored.                                            |
+| `sessionTicket`  | PlayFab session ticket – can be ignored.                                                         |
+| `picture`        | User's profile image URL. Can be used for avatars.                                               |
+| `banner`         | User's banner image URL.                                                                         |
+| `ethAddress`     | User’s Ethereum wallet address (if connected).                                                   |
+| `waxAddress`     | User’s WAX wallet address (if connected).                                                        |
+| `photoUrl`       | **Deprecated** – replaced by `picture`.                                                          |
+| `createdAt`      | Timestamp when the user account was created.                                                     |
+| `provider`       | Authentication provider used (e.g., `google`, `apple`, `wallet`).                               |
+
+
+
+## ⚙️ Features Configuration
+
+You can customize which login methods to show by passing a `features` object to the `<LoginPanel>` component:
+
+### Example (React / NPM):
+
+```tsx
+<LoginPanel
+  ...
+  features={{
+    enableWalletConnect: true,
+    enableAppleLogin: true,
+    enableGoogleLogin: true,
+    enableEmailLogin: true,
+  }}
+/>
+```
+
+### Example (HTML / Script Tag):
+
+```js
+React.createElement(Bedrock.LoginPanel, {
+  ...
+  features: {
+    enableWalletConnect: true,
+    enableAppleLogin: true,
+    enableGoogleLogin: true,
+    enableEmailLogin: true,
+  }
+})
+```
+
+### Available Feature Flags
+
+| Feature                | Description                              |
+|------------------------|------------------------------------------|
+| `enableWalletConnect`  | Enables Web3 wallet login                |
+| `enableAppleLogin`     | Enables Apple ID login                   |
+| `enableGoogleLogin`    | Enables Google login                     |
+| `enableEmailLogin`     | Enables email-based login (magic link)   |
